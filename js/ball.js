@@ -1,24 +1,28 @@
 console.log("ballTest")
 
+// Ball Function
+
 function Ball(game, x, y) {
+
+    //Ball Image
 
     this.game = game;
 
     this.img = new Image();
 
-    this.img.src = 'images/ball.png'
+    this.img.src = 'images/ball.png';
 
-    // Players Width and Height
+    // Ball Width and Height
 
-    this.w = 30;
+    this.w = 35;
 
-    this.h = 30;
+    this.h = 35;
 
     // Ball Frame Position
 
-    this.x = x / 2
+    this.x = x / 2;
 
-    this.y = y / 2
+    this.y = y / 2;
 
     // Ball Velocity
 
@@ -26,7 +30,7 @@ function Ball(game, x, y) {
 
     this.velocityY = 5;
 
-    this.speed = 7
+    this.speed = 1
 
 };
 
@@ -34,12 +38,9 @@ function Ball(game, x, y) {
 
 Ball.prototype.draw = function() {
 
-
-
     this.game.ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
 
     this.velocity()
-
 
 };
 
