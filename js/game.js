@@ -282,11 +282,11 @@ var Game = {
 
     winner: function() {
 
-        if (this.score.player1 === 2) {
+        if (this.score.player1 === 3) {
             this.manageWinner();
             // alert("Player 1 Wins   |   Final Score = " + this.score.player1 + " - " + this.score.player2);
 
-        } else if (this.score.player2 === 2) {
+        } else if (this.score.player2 === 3) {
             this.manageWinner();
             // alert("Player 2 Wins   |   Final Score = " + this.score.player1 + " - " + this.score.player2);
         };
