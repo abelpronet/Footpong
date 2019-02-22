@@ -20,6 +20,7 @@ var Game = {
         player1: 0,
         player2: 0
     },
+    whoScore: undefined,
     goal: false,
     goalText: "GOAL! ",
     winnerText: {
@@ -150,7 +151,7 @@ var Game = {
 
             this.ball.speed = 1;
 
-        }.bind(this), 4000)
+        }.bind(this), 5500)
 
     },
 
@@ -227,7 +228,7 @@ var Game = {
 
         setTimeout(function() {
             this.goalMessage.show = false;
-        }.bind(this), 2500)
+        }.bind(this), 2000)
 
     },
 
@@ -239,7 +240,7 @@ var Game = {
             this.winnerMessage.show = false;
             this.score.player1 = 0;
             this.score.player2 = 0;
-        }.bind(this), 2500)
+        }.bind(this), 2000)
 
     },
 
@@ -252,6 +253,7 @@ var Game = {
             this.score.player1++;
             this.audioGoal.play()
             this.manageScore();
+            this.whoScore = 'p1'
 
             this.goal = true;
 
@@ -264,6 +266,7 @@ var Game = {
             this.score.player2++;
             this.audioGoal.play()
             this.manageScore();
+            this.whoScore = 'p2'
 
             this.goal = true;
 
@@ -279,11 +282,11 @@ var Game = {
 
     winner: function() {
 
-        if (this.score.player1 === 5) {
+        if (this.score.player1 === 2) {
             this.manageWinner();
             // alert("Player 1 Wins   |   Final Score = " + this.score.player1 + " - " + this.score.player2);
 
-        } else if (this.score.player2 === 5) {
+        } else if (this.score.player2 === 2) {
             this.manageWinner();
             // alert("Player 2 Wins   |   Final Score = " + this.score.player1 + " - " + this.score.player2);
         };

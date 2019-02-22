@@ -1,8 +1,12 @@
 console.log("indexTest")
 
 window.onload = function() {
+    document.querySelector('.myButton').onclick = function() {
+        Game.init("canvas");
+        document.querySelector('.footpong-intro').style.display = 'none'
+    }
 
-    Game.init("canvas");
+
 
 };
 

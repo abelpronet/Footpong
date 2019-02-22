@@ -26,37 +26,53 @@ GoalMessage.prototype.draw = function(text, x, y, color) {
 
         this.game.ctx.fillStyle = "#f4b609";
 
-        this.game.ctx.shadowOffsetX = 5;
+        this.game.ctx.shadowOffsetX = 4;
 
-        this.game.ctx.shadowOffsetY = 5;
+        this.game.ctx.shadowOffsetY = 4;
 
         this.game.ctx.shadowColor = "BLACK";
 
-        this.game.ctx.fillText(this.game.goalText, this.x + 15, this.y + 35);
+        this.game.ctx.fillText(this.game.goalText, this.x - 5, this.y + 35);
 
-        if (this.game.score.player1) {
+        if (this.game.whoScore === 'p1') {
 
-            this.game.ctx.font = "30px arial";
+            this.game.ctx.font = "20px press";
 
-            this.game.ctx.fillStyle = "#393939";
+            this.game.ctx.fillStyle = "#f4b609"; // Color: Gold
+
+            // this.game.ctx.fillStyle = "#393939"; // Color: Grey
+
+            this.game.ctx.shadowOffsetX = 2;
+
+            this.game.ctx.shadowOffsetY = 2;
+
+            this.game.ctx.shadowColor = "BLACK";
+
+            this.game.ctx.fillText("Player 1 Scores!", this.x - 120, this.y - 170);
 
             this.game.ctx.shadowOffsetX = 0;
 
             this.game.ctx.shadowOffsetY = 0;
-
-            this.game.ctx.fillText("Player 1 Scores!", this.x, this.y - 190);
 
         } else {
 
-            this.game.ctx.font = "30px arial";
+            this.game.ctx.font = "20px press";
 
-            this.game.ctx.fillStyle = "WHITE";
+            this.game.ctx.fillStyle = "#f4b609"; // Color: Gold
+
+            // this.game.ctx.fillStyle = "WHITE"; // Color: White
+
+            this.game.ctx.shadowOffsetX = 2;
+
+            this.game.ctx.shadowOffsetY = 2;
+
+            this.game.ctx.shadowColor = "BLACK";
+
+            this.game.ctx.fillText("Player 2 Scores!", this.x + 240, this.y - 170);
 
             this.game.ctx.shadowOffsetX = 0;
 
             this.game.ctx.shadowOffsetY = 0;
-
-            this.game.ctx.fillText("Player 2 Scores!", this.x + 260, this.y - 190);
 
         };
 
